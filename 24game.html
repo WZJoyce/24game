@@ -73,9 +73,11 @@
 				getRandomNum() {
 					this.randomNum = [];
 					for (var i = 0; i < 4; i++) {
+						//1-9
 						this.randomNum.push(Math.floor(Math.random(9)*10+1));
 					}
 				},
+				//show equation
 				getVal(num,index) {
 					let selNum = num;
 					this.result += num;
@@ -94,6 +96,7 @@
 							break;
 					}
 				},
+				//flags: check if each number is used
 				resetFlag() {
 					this.flag0 = false;
 					this.flag1 = false;
@@ -122,10 +125,10 @@
 					this.result = '';
 					this.resetFlag();
 				},
+				//confirm the answer
 				confirm() {
 					try{
 						var flag = this.flag0 && this.flag1 && this.flag2 && this.flag3;
-						console.log('res:',this.result);
 						if (flag) {
 							this.tempResult = eval(this.result);
 							if (this.tempResult === 24) {
